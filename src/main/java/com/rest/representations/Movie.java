@@ -8,12 +8,14 @@ import org.hibernate.validator.constraints.NotBlank;
 
 
 public class Movie {
-     // The class Movie represents a Movie just with a title and an unique id
+     
     @NotNull
     private Integer id;
 
     @NotBlank @Length(min=2, max=255)
     private String name;
+
+    //Add release date, director ... and access methods
      
     public Movie(){
     }

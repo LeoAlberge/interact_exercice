@@ -22,5 +22,7 @@ public class MovieDB {
     public static Movie getMovie(Integer id){
         return movies.get(id);
     }
+
+    //Remove a Movie by id, Delete a Movie by id
      
 }
