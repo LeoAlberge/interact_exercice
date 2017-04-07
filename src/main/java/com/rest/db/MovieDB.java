@@ -2,6 +2,7 @@ package com.rest.db;
  
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.List;
 
 import com.rest.representations.Movie;
@@ -10,19 +11,39 @@ public class MovieDB {
      // Class that contains Movie items in an HashMap, Every movie has its own id
     public static HashMap<Integer, Movie> movies = new HashMap<>();
     static{
-        movies.put(1, new Movie(1, "King Kong"));
-        movies.put(2, new Movie(2, "Cendrion"));
-        movies.put(3, new Movie(3, "StarWars"));
+        movies.put(1, new Movie(1, "King Kong", "Leo", 2014));
+        movies.put(2, new Movie(2, "Cendrion", "Leo", 2014));
+        movies.put(3, new Movie(3, "StarWars", "Leo", 2014));
     }
      
     public static List<Movie> getMovies(){
         return new ArrayList<Movie>(movies.values());
+    }
+
+    public static List<Movie> getMoviesByYear(int year){
+        ArrayList<Movie> list = new ArrayList<Movie>();
+        for(Entry<Integer, Movie> entry : movies.entrySet()) {
+            Movie movie = entry.getValue();
+            if (movie.getReleaseDate()==year){
+                list.add(movie);
+            }
+        }
+        return list;
     }
      
     public static Movie getMovie(Integer id){
         return movies.get(id);
     }
 
-    //Remove a Movie by id, Delete a Movie by id
-     
+    public static void removeMovie(Integer id){
+        movies.remove(id);
+    }
+
+    public static void updateMovie( Integer id, Movie movie){
+        movies.put(id, movie);
+    }
+
+    public static int size(){
+        return movies.size();
+    }
 }

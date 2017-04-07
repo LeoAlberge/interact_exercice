@@ -1,0 +1,5 @@
+com/rest/representations/Movie.class
+com/rest/App.class
+com/rest/controller/MovieRESTController.class
+com/rest/representations/CustomDateSerializer.class
+com/rest/db/MovieDB.class
