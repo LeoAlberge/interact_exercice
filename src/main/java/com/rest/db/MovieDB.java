@@ -12,7 +12,7 @@ public class MovieDB {
     public static HashMap<Integer, Movie> movies = new HashMap<>();
     static{
         movies.put(1, new Movie(1, "King Kong", " Merian Caldwell Cooper - Ernest Beaumont Schoedsack", 1933));
-        movies.put(3, new Movie(3, "Star Wars: Episode IV – A New Hope", "George Lucas", 1977));
+        movies.put(2, new Movie(2, "Star Wars: Episode IV – A New Hope", "George Lucas", 1977));
     }
      
     public static List<Movie> getMovies(){
