@@ -45,4 +45,16 @@ public class MovieDB {
     public static int size(){
         return movies.size();
     }
+
+    public static Integer getAvailableKey(){
+        Integer key = 0;
+        for(Entry<Integer, Movie> entry : movies.entrySet()) {
+            Integer temp_key = entry.getKey();
+            if (temp_key > key ){
+                key = temp_key;
+            }
+        }
+        key++;
+        return key;
+    }
 }

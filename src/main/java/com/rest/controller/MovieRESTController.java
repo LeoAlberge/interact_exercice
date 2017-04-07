@@ -86,12 +86,11 @@ public class MovieRESTController {
 
     @POST
     public Response createMovie(Movie movie){
-        movie.setId(MovieDB.size()+1);
-        MovieDB.updateMovie(MovieDB.size()+1,movie);
+        movie.setId(MovieDB.getAvailableKey());
+        MovieDB.updateMovie(MovieDB.getAvailableKey(),movie);
         return Response.ok(movie).build();
     }
 
 
 
-    //Add methods for create a movie, update a movie by request
 }
